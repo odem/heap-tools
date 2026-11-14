@@ -1,0 +1,18 @@
+# heap-tools: gdb stack-view pane aliases (installed to /etc/bash_aliases.d/)
+# Sourced from ~/.bashrc (marker block written by stackview/install.sh).
+#
+# TWO kinds of aliases:
+#   gdb-tmux-sv-* : open a tmux PANE with the view (run INSIDE tmux)
+#   gdb-sv-*      : run the view pane DIRECTLY in this terminal (no tmux!)
+#
+# Any view name works -- follow the pattern to add your own, e.g.:
+#   alias gdb-tmux-sv-bt='tmux split-window -h "bash ~/stackview/stackview-pane.sh bt"'
+#   alias gdb-sv-bt='bash ~/stackview/stackview-pane.sh bt'
+
+# --- inside tmux: split a right-side pane with the view -------------------
+alias gdb-tmux-sv-stack='tmux split-window -h "bash ~/stackview/stackview-pane.sh stack"'
+alias gdb-tmux-sv-frame='tmux split-window -h "bash ~/stackview/stackview-pane.sh frame"'
+
+# --- no tmux: run the view pane DIRECTLY in this terminal (Ctrl-C to leave) --
+alias gdb-sv-stack='bash ~/stackview/stackview-pane.sh stack'
+alias gdb-sv-frame='bash ~/stackview/stackview-pane.sh frame'

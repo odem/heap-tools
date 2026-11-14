@@ -1,0 +1,6 @@
+# build artifacts (testprograms)
+out/
+
+# python
+__pycache__/
+*.pyc

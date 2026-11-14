@@ -1,0 +1,20 @@
+# heap-tools: gdb view-pane aliases (installed to /etc/bash_aliases.d/)
+# Sourced from ~/.bashrc (marker block written by heapview/install.sh).
+#
+# TWO kinds of aliases:
+#   gdb-tmux-hv-* : open a tmux PANE with the view (run INSIDE tmux)
+#   gdb-hv-*      : run the view pane DIRECTLY in this terminal (no tmux!)
+#
+# Any view name works -- follow the pattern to add your own, e.g.:
+#   alias gdb-tmux-hv-bins='tmux split-window -h "bash ~/heapview/heapview-pane.sh bins"'
+#   alias gdb-hv-bins='bash ~/heapview/heapview-pane.sh bins'
+
+# --- inside tmux: split a right-side pane with the view -------------------
+alias gdb-tmux-hv-heapinfo='tmux split-window -h "bash ~/heapview/heapview-pane.sh heapinfo"'
+alias gdb-tmux-hv-arena='tmux split-window -h "bash ~/heapview/heapview-pane.sh arena"'
+alias gdb-tmux-hv-parseheap='tmux split-window -h "bash ~/heapview/heapview-pane.sh parseheap"'
+
+# --- no tmux: run the view pane DIRECTLY in this terminal (Ctrl-C to leave) --
+alias gdb-hv-heapinfo='bash ~/heapview/heapview-pane.sh heapinfo'
+alias gdb-hv-arena='bash ~/heapview/heapview-pane.sh arena'
+alias gdb-hv-parseheap='bash ~/heapview/heapview-pane.sh parseheap'
